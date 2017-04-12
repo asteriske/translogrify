@@ -4,7 +4,7 @@ Translogrify is designed to limit the deluge of log emails that occurs in techni
 
 ## How it works
 
-Rather than have individual alerts send emails on their own, translogrify collects each alert into a row of a table along with a severity code and a list of its intended recipents. On demand, emails can then be sent per-recipient with a given lookback and severity level.
+Rather than have individual alerts send emails on their own, translogrify collects each alert into a row of a MySQL table along with a severity code and a list of its intended recipents. On demand, emails can then be sent per-recipient with a given lookback and severity level.
 
 ## Installation
 
@@ -32,7 +32,7 @@ Assign a MySQL user with CREATE privileges and then run
 
     $ create_db_and_table
 
-which will create the log db as specified in `.translogrify.conf`. 
+which will create the log db as specified in `.translogrify.conf`. This step can be skipped and the table be created manually, in which case `mysqluser` will only need write privileges.
 
 ## Usage
 
