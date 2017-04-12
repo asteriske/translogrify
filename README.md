@@ -42,8 +42,10 @@ A new line is added to the log with an invocation like the following:
 
 To send email digests to each user with their messages from the last 12 hours with severity >= 3,
 
-    $ send_tgy_email --lookback 6 --minlevel 3
+    $ send_tgy_email --lookback 6 --minlevel 1 
 
 Each recipient will then get a color-coded priority-sorted email like this:
 
 ![translogrify example](https://github.com/asteriske/asteriske.github.io/blob/master/img/translogrify.png)
+
+One possible configuration is to set a cron to deliver severity 1 messages every one hour and severity >= 1 every six hours.
