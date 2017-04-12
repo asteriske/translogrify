@@ -10,7 +10,7 @@ Rather than have individual alerts send emails on their own, translogrify collec
 
 Translogrify can be installed from github: 
 
-    git clone git@github.com:asteriske/translogrify.git ~/translogrify
+    git clone https://github.com/asteriske/translogrify.git ~/translogrify
 
     pip install ~/translogrify
 
