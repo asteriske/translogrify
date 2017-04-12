@@ -44,7 +44,7 @@ To send email digests to each user with their messages from the last 12 hours wi
 
     $ send_tgy_email --lookback 6 --minlevel 1 
 
-Each recipient will then get a color-coded priority-sorted email like this:
+Each recipient will then get a personalized color-coded priority-sorted email like this:
 
 ![translogrify example](https://github.com/asteriske/asteriske.github.io/blob/master/img/translogrify.png)
 
