@@ -38,11 +38,11 @@ which will create the log db as specified in `.translogrify.conf`.
 
 A new line is added to the log with an invocation like the following:
 
-    log_update MESSAGE ALERT_LEVEL EMAIL1 EMAIL2 ...
+    $ log_update MESSAGE ALERT_LEVEL EMAIL1 EMAIL2 ...
 
 To send email digests to each user with their messages from the last 12 hours with severity >= 3,
 
-    send_tgy_email --lookback 6 --minlevel 3
+    $ send_tgy_email --lookback 6 --minlevel 3
 
 Each recipient will then get a color-coded priority-sorted email like this:
 
