@@ -12,7 +12,7 @@ def write_new_config():
             'mailserver':'server',
             'mailfromaddr':'fromaddr',
             'mailpass':'mailpass',
-            'db':'mdf',
+            'db':'translogrify',
             'table':'log'
             }
 
