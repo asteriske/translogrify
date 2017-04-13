@@ -34,7 +34,7 @@ def insert_log_entry(message, level, recipients):
         except Exception as e:
             print(e)
 
-def add_log_line():
+def add_log_line_cli():
 
     config = translogrify.create.read_config()
 
@@ -54,6 +54,15 @@ def add_log_line():
     insert_log_entry(args.message[0], 
             args.level[0], 
             recipients_json)
+
+def add_log_line(message, level, recipients):
+
+    recipients_json = json.dumps({"email":recipients})
+
+    insert_log_entry(message, 
+            level, 
+            recipients_json)
+
 
 if __name__ == '__main__':
 

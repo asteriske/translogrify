@@ -33,7 +33,7 @@ setup(
 
         entry_points = {
             "console_scripts": ['create_db_and_table = translogrify.create:create_db_and_table',
-                'log_update = translogrify.log_update:add_log_line',
+                'log_update = translogrify.log_update:add_log_line_cli',
                 'send_tgy_email = translogrify.send_email:send_email']
             },
         version = version,
@@ -43,5 +43,6 @@ setup(
         author_email = "patrickjmc@gmail.com",
         url = "http://asteriske.github.io",
         )
-#from translogrify import create, send_email
-#create.write_new_config()
+
+from translogrify import create, send_email
+create.write_new_config()
