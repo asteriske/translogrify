@@ -44,6 +44,15 @@ To send email digests to each user with their messages from the last 12 hours wi
 
     $ send_tgy_email --lookback 6 --minlevel 1 
 
+Alternatively, it can be used from within a python script:
+
+    from translogrify.log_update import add_log_line
+    from translogrify.emailfunc import send_log_emails
+
+    add_log_line("my log message",3,["addr@email.com","anotheraddr@email.com"])
+
+    send_log_emails(lookback_hr=12,min_level=1)
+
 Each recipient will then get a personalized color-coded priority-sorted email like this:
 
 ![translogrify example](https://github.com/asteriske/asteriske.github.io/blob/master/img/translogrify.png)
