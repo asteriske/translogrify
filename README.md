@@ -46,8 +46,7 @@ To send email digests to each user with their messages from the last 12 hours wi
 
 Alternatively, it can be used from within a python script:
 
-    from translogrify.log_update import add_log_line
-    from translogrify.emailfunc import send_log_emails
+    from translogrify import add_log_line, send_log_emails
 
     add_log_line("my log message",3,["addr@email.com","anotheraddr@email.com"])
 
