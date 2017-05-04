@@ -13,7 +13,9 @@ def write_new_config():
             'mailfromaddr':'fromaddr',
             'mailpass':'mailpass',
             'db':'translogrify',
-            'table':'log'
+            'table':'log',
+            'port':'587',
+            'email_requires_login':'True'
             }
 
     with open(os.path.join(os.path.expanduser('~'),'.translogrify.conf'),'w') as configfile:
