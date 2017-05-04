@@ -101,10 +101,16 @@ def send_email(in_df):
     msg.attach(MIMEText(body, 'plain'))
     msg.attach(MIMEText(html, 'html'))
 
+
     try: 
-        server = smtplib.SMTP(config['mailserver'], 587)
-        server.starttls()
-        server.login(fromaddr, config['mailpass'])
+        server = smtplib.SMTP(config['mailserver'], config['port'])
+
+        if config['port'] == 587:
+            server.starttls()
+
+        if config['email_requires_login']:
+            server.login(fromaddr, config['mailpass'])
+
         text = msg.as_string()
         server.sendmail(fromaddr, toaddr, text)
         server.quit()
