@@ -25,8 +25,10 @@ After installing, update ~/.translogrify.conf with settings appropriate to your 
     mysqluser = mysqluser
     db = translogrify 
     mailserver = server
+    port = 587
+    requires_email_login = True
 
-Currently TLS on port 587 is assumed. 
+Currently unauthenticated SMTP on port 25 and TLS on port 587 are supported. 
 
 Assign a MySQL user with CREATE privileges and then run 
 
