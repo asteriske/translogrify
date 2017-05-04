@@ -107,8 +107,7 @@ def send_email(in_df):
 
         if config['port'] == 587:
             server.starttls()
-
-        if config['email_requires_login']:
+        if config['email_requires_login']=='True':
             server.login(fromaddr, config['mailpass'])
 
         text = msg.as_string()
