@@ -103,9 +103,9 @@ def send_email(in_df):
 
 
     try: 
-        server = smtplib.SMTP(config['mailserver'], config['port'])
+        server = smtplib.SMTP(config['mailserver'], int(config['port']))
 
-        if config['port'] == 587:
+        if int(config['port']) == 587:
             server.starttls()
         if config['email_requires_login']=='True':
             server.login(fromaddr, config['mailpass'])

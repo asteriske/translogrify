@@ -1,37 +1,50 @@
-import configparser
+from configparser import ConfigParser
 import os
 import sqlalchemy
 
 def write_new_config():
     
-    config = configparser.ConfigParser()
+    config = ConfigParser()
 
-    config['DEFAULT'] = {'MySQLUser':'mysqluser',
-            'MySQLPass':'mysqlpass',
-            'MySQLHost':'mysqlhost',
-            'mailserver':'server',
-            'mailfromaddr':'fromaddr',
-            'mailpass':'mailpass',
-            'db':'translogrify',
-            'table':'log',
-            'port':'587',
-            'email_requires_login':'True'
-            }
+    config.set('DEFAULT','mysqluser','mysqluser')
+    config.set('DEFAULT','mysqlpass','mysqlpass')
+    config.set('DEFAULT','mysqlhost','mysqlhost')
+    config.set('DEFAULT','mailserver','mailserver')
+    config.set('DEFAULT','mailfromaddr','fromaddr')
+    config.set('DEFAULT','mailpass','mailpass')
+    config.set('DEFAULT','db','translogrify')
+    config.set('DEFAULT','table','log')
+    config.set('DEFAULT','port','587')
+    config.set('DEFAULT','email_requires_login','True')
 
     with open(os.path.join(os.path.expanduser('~'),'.translogrify.conf'),'w') as configfile:
         config.write(configfile)
 
 def read_config():
 
-    config = configparser.ConfigParser()
+    config = ConfigParser()
 
     config.read(os.path.join(os.path.expanduser('~'),'.translogrify.conf'))
 
-    return config['DEFAULT']
+    cfg = {}
+
+    cfg['mysqluser']            = config.get('DEFAULT','mysqluser')
+    cfg['mysqlpass']            = config.get('DEFAULT','mysqlpass')
+    cfg['mysqlhost']            = config.get('DEFAULT','mysqlhost')
+    cfg['mailserver']           = config.get('DEFAULT','mailserver')
+    cfg['mailfromaddr']         = config.get('DEFAULT','mailfromaddr')
+    cfg['mailpass']             = config.get('DEFAULT','mailpass')
+    cfg['db']                   = config.get('DEFAULT','db')
+    cfg['table']                = config.get('DEFAULT','table')
+    cfg['port']                 = int(config.get('DEFAULT','port'))
+    cfg['email_requires_login'] = config.get('DEFAULT','email_requires_login')
+
+    return cfg
+
 
 def create_db_and_table():
 
-    config = configparser.ConfigParser()
+    config = ConfigParser()
     config.read(os.path.join(os.path.expanduser('~'),'.translogrify.conf'))
 
     conf = config['DEFAULT']

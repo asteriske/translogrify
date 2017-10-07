@@ -20,7 +20,7 @@ def insert_log_entry(message, level, recipients):
     engine = sqlalchemy.create_engine(conn_str)
 
     meta = sqlalchemy.MetaData()
-    meta.reflect(bind=engine)
+    meta.reflect(bind=engine,only=[config['table']])
 
     log_table = sqlalchemy.Table(config['table'],meta)
 
