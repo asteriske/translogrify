@@ -58,4 +58,4 @@ Each recipient will then get a personalized color-coded priority-sorted email li
 
 ![translogrify example](https://github.com/asteriske/asteriske.github.io/blob/master/img/translogrify.png)
 
-One possible configuration is to set a cron to deliver severity 1 messages every one hour and severity >= 1 every six hours.
+One possible configuration is to set a cron to deliver severity 5 messages every one hour and severity <= 5 every six hours.
